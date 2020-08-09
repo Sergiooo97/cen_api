@@ -51,7 +51,7 @@ class alumnos extends Controller
      */
     public function show($id)
     {
-        $alumno = alumno::select(
+        $alumno = alumno::find($id)->select(
             'alumnos.id',
             'alumnos.matricula as matricula',
             'alumnos.nombres as nombres',
@@ -76,7 +76,6 @@ class alumnos extends Controller
             'tutores.correo as correo_tutor')
             ->join('tutores', 'alumnos.id', '=', 'tutores.alumno_id')
             ->join('ndolar_listas', 'alumnos.id', '=', 'ndolar_listas.alumno_id')
-            ->where('alumnos.id', $id)
             ->first();
 
         return response()->json($alumno);
