@@ -22,4 +22,4 @@ Route::get('/', function () {
     return response()->json(["nombre"=>"Rafael Eb Gallegos"]);
 });
 Route::resource('/alumnos','api\alumnos');
-Route::get('/alumnos/{id}','api\alumnos@show');
+Route::get('/alumnos-inf/{id}','api\alumnos@show');
