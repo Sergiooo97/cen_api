@@ -72,8 +72,10 @@ class alumnos extends Controller
             'tutores.apellido_materno as apellido_materno_tutor',
             'tutores.escolaridad as escolaridad_tutor',
             'tutores.curp as curp_tutor',
+            'ndolar_listas.cantidad as ndolar_cantidad',
             'tutores.correo as correo_tutor')
             ->join('tutores', 'alumnos.id', '=', 'tutores.alumno_id')
+            ->join('ndolar_listas', 'alumnos.id', '=', 'ndolar_listas.alumno_id')
             ->first();
 
         return response()->json($alumno);
