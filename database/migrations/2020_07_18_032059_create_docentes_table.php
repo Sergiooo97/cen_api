@@ -17,7 +17,7 @@ class CreateDocentesTable extends Migration
             $table->id();
             $table->string('matricula');
             $table->string('RFC');
-            $table->string('nombres');
+            $table->string('nombre');
             $table->string('apellido_paterno');
             $table->string('apellido_materno');
             $table->integer('edad');
