@@ -51,7 +51,6 @@ class alumnos extends Controller
      */
     public function show($id)
     {
-        $alumnos = alumno::find($id)->first();
         $alumno = alumno::select(
             'alumnos.id',
             'alumnos.matricula as matricula',
